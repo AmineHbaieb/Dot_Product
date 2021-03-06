@@ -1,0 +1,27 @@
+PROCEDURE Dot_Product(v1,v2: ARRAY)
+VAR
+    PS : INTEGER := 0;
+    i : INTEGER := 0;
+    j : INTEGER := 0;
+BEGIN
+    FOR i FROM 0 to v1.length-1 STEP 1 DO
+        FOT j FROM 0 to v2.length-1 STEP 1 DO
+            PS := PS + v1(i) * v2(j);
+        END_FOR
+    END_FOR
+    write(PS)
+END
+
+
+ALGORITHME is_orthogonal
+VAR
+    v1 : ARRAY;
+    v2 : ARRAY;
+    PS : INTEGER;
+
+BEGIN
+    PS := Dot_Product(v1,v2);
+    IF PS = 0 THEN
+        write("v1 and v2 are orthogonal");
+    END_IF
+END
